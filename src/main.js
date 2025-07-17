@@ -1,9 +1,10 @@
-import Lenis from "lenis"
+import Lenis from "lenis";
 
-const lenis = new Lenis({
-  autoRaf: true,
-})
+const lenis = new Lenis();
 
-lenis.on("scroll", ({ scroll }) => {
-  console.log(scroll)
-})
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+raf();
